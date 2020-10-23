@@ -1,18 +1,19 @@
 const router = require("express").Router();
-const store = require("../db/store");
-const fs = require("fs")
-
-
-
-// router.get("/api/notes", (req,res) => {
-//     store.getNotes().then(notes) => res.json(notes)
-    //you will use fs.readfile('../db/db.json)
-  //this is where you read the file and JSON.parse it and THEN res.json
-// });
+// const store = require("../db/store");
+const fs = require("fs");
+const path = require("path");
 
 
 
 
+router.get("/api/notes", (req, res) => {
+
+    fs.readFile(path.join(__dirname, "../db/db.json", function(err, data) {
+        if (err) throw err;
+        const notes = JSON.parse(data);
+        res.json(notes);
+    
+}));
 
 
 // router.post("/api/notes", (req, res) => {

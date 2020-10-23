@@ -1,7 +1,7 @@
 //add in all paths required
 const express = require ("express");
 const apiRoutes = require("./routes/apiRoutes");
-const htmlRoutes = require(".routes/htmlRoutes");
+const htmlRoutes = require("./routes/htmlRoutes");
 
 
 const app = express();

@@ -6,14 +6,16 @@ const router = require("express").Router();
 //put in a catch all at the last of the routes
 
 router.get("/notes", function(req, res){
-    res.sendFile(path.join(__dirname,'','./public/notes.html'));
+    res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
 
 
 
-router.get("*", function (req, res){
-    res.sendFile(path.join(__dirname,'','./public/index.html'));
+router.get("/", function (req, res){
+    res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
+
+router.get("*"), function 
 
 module.exports = router;
