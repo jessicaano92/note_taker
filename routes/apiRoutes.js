@@ -17,13 +17,21 @@ router.get("/api/notes", (req, res) => {
 }));
 
 
-// router.post("/api/notes", (req, res) => {
+router.post("/api/notes", function (req, res){
 
-//     console.log (req.body);               
-//     fs.writeFile(path.join(__dirname,"../db/db.json", 'utf8', function(err, data) {
+    fs.writeFile(path.join(__dirname, "../db/db.json", "utf8"), (err, data) =>{
+        if (err) throw err;
+        const notes = JSON.parse(data);
+        const newNote = req.body;
+        notes.push(newNote);
+        res.json(newNote);
 
-//     }));
-    //req.body the note that you write and then you will fs.writeFile('../db/db.json', 'utf8', JSON.stringify(THE NEW NOTE))
+
+        //stringify
+    });
+
+});
+
 
 });
 
