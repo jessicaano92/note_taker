@@ -3,19 +3,28 @@ const path = require("path");
 const router = require("express").Router();
 
 //load routes last. 
-//put in a catch all at the last of the routes
-
-router.get("/notes", function(req, res){
-    res.sendFile(path.join(__dirname, "./public/notes.html"));
-});
 
 
+
+//ROUTE HANDLERS//
 
 router.get("/", function (req, res){
     res.sendFile(path.join(__dirname, "./public/index.html"));
+
 });
 
 
-router.get("*"), function 
+router.get("/notes", function(req, res){
+    res.sendFile(path.join(__dirname, "./public/notes.html"));
+    res.end("It works!");
+});
+
+
+
+//catch all route handler 
+router.get("*", function(req, res){
+    res.status(404).send('something is broken');
+})
+
 
 module.exports = router;
