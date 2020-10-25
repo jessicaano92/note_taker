@@ -14,6 +14,10 @@ This note taker allows the user to start writing notes, save notes, and delete n
 
 <img src= "https://github.com/jessicaano92/note_taker/blob/main/images/img3.png">
 
+## Installation
+
+express, path, fs, router
+
 ## Credits
 
 Credit goes to my instructor Gary along with the TA's in my cohort, Leo and Maria. They all have been a huge help and continue to answer any and all questions and concerns I may have. 
